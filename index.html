@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Your Discount | Memory Breath</title>
+
+  <!-- Meta description otimizada -->
+  <meta name="description" content="Discover the 3-second Memory Breath ritual to boost mental clarity naturally. Limited-time offer: Only $39. Try it risk-free with 90-day guarantee.">
+
+  <!-- ClickFast Tracking Script -->
+  <script src="https://www.app.clickfastads.com.br/api/tracker/684f2ff9271c9e11ad24dfa6" defer></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ClickFastAds/tracker@main/styles.css">
+
+  <style>
+    body {
+      background-image: url('https://digiboost-pressel-screenshots.s3.sa-east-1.amazonaws.com/79c467c4abf5af12d71a26c52e3f4d/684f2ff9271c9e11ad24dfa6/1750020119823.jpeg');
+      background-size: cover;
+      background-position: top center;
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+    }
+    @media (max-width: 768px) {
+      body {
+        background-image: url('https://digiboost-pressel-screenshots.s3.sa-east-1.amazonaws.com/79c467c4abf5af12d71a26c52e3f4d/684f2ff9271c9e11ad24dfa6/1750020119652.jpeg');
+      }
+    }
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.7);
+      color: #fff;
+      font-size: 12px;
+      padding: 10px;
+      text-align: center;
+      z-index: 999;
+    }
+    .footer a {
+      color: #ccc;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay" id="overlay"></div>
+
+  <div class="cookie-popup" id="cookiePopup">
+    <h2>Get Your Discount Here</h2>
+    <p>Click below to claim your special $10 OFF offer and try the Memory Breath system today for only $39!</p>
+    <a 
+      href="https://hop.clickbank.net/?affiliate=becunha&vendor=memoryb&pid=text" 
+      id="acceptCookies" 
+      class="btn btn-allow"
+      data-base-url="https://hop.clickbank.net/?affiliate=becunha&vendor=memoryb&pid=text"
+    >
+      Claim Discount
+    </a>
+    <button id="cookieSettings" href="https://hop.clickbank.net/?affiliate=becunha&vendor=memoryb&pid=text" class="btn btn-settings">Close</button>
+  </div>
+
+  <!-- Cookie info no rodapé -->
+  <div class="footer">
+    This site uses cookies to improve your browsing experience and track affiliate commissions. By continuing, you agree to our <a href="#">Cookie Policy</a>.
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var overlay = document.getElementById('overlay');
+      var cookiePopup = document.getElementById('cookiePopup');
+      var acceptCookies = document.getElementById('acceptCookies');
+      var cookieSettings = document.getElementById('cookieSettings');
+      var redirectUrl = acceptCookies.getAttribute("data-base-url");
+
+      function redirectToUrl(url) {
+        const tempLink = document.createElement('a');
+        tempLink.href = url;
+        tempLink.style.display = 'none';
+        document.body.appendChild(tempLink);
+        tempLink.click();
+        document.body.removeChild(tempLink);
+      }
+
+      overlay.style.display = 'block';
+      cookiePopup.style.display = 'block';
+
+      acceptCookies.addEventListener('click', function (e) {
+        e.preventDefault();
+        redirectToUrl(redirectUrl);
+      });
+
+      cookieSettings.addEventListener('click', () => redirectToUrl(redirectUrl));
+      overlay.addEventListener('click', () => redirectToUrl(redirectUrl));
+      cookiePopup.addEventListener('click', function (e) {
+        if (e.target === cookiePopup || e.target.closest('.btn') === null) {
+          redirectToUrl(redirectUrl);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
